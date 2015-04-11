@@ -1,14 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>SpringProject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
-</html>
+<!DOCTYPE html> <html> <head>   <title>Spring Pharmacy</title>  
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> 
+<%= csrf_meta_tags %> </head> <body>        
+<div id='header'>
+  
+  <!-- Header Image Displayes here -->  
+  
+  </div><div id='menu'>      
+  <div id="navbar"> 
+  <ul>
+        <li><a href="/items">Products</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/admin">Login</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/cart">View Cart(<%=@total_items%> items, $x</a></li>
+      </ul>      
+  </div>     
+  </div>     
+  <div id='container'>          
+  <div id='content'>          
+  <p class="notice">
+    <%= flash[:notice] %></p> 
+    <p class="notice"><%= notice %></p> 
+       
+       <p class="alert"><%= alert %></p>  
+    <%= yield %>  
+    
+    <% if user_signed_in? %>  
+    
+    <div>Signed in as... <%= current_user.email %> (<%= link_to 'Sign out', destroy_user_session_path, :method => :delete  %>)</div>
+    
+    <% else %>   
+    
+    <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %> 
+    
+    <% end %>   
+    
+    
+    </div>
+    <div id='first-column'>             
+    <div class="loginbox">               
+    <h2 class="BoxHeaders">Login Here....</h2>  
+    </div>               
+    <div class="searchbox"> 
+    <h2 class="BoxHeaders">Search Catalog</h2>  
+    </div>             
+    </div>         
+    </div>         
+    <div id='footer'>             
+    <h6 class="footertext">&copy; 
+    Online Spring Store &trade; 2015</h6>       
+    </div> 
+    </body> 
+    </html> 
+  
