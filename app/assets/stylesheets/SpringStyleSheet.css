@@ -1,8 +1,8 @@
 body {
-	
+     
 }
 
-img.floatLeft { 
+img.floatLeft {
     float: left; 
     margin: 4px; 
 }
@@ -52,14 +52,21 @@ h2.BoxHeaders {
 	margin-top: 0px;
 	margin-bottom: 3px;
 }  
+h2.BoxHeaders1 {
+	font-size: 20px;
+	color: #D80000;
+	font-weight: bold;
+	text-align: center;
+	
+	margin-top: 0px;
+	margin-bottom: 3px;
+}  
 
-body {
-    /* background: white;
-    background-image: url("bg5.gif");*/
-    background: rgb(f, f, f);
+body #bd{
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    background-color:#A349A4;
 }
 h1, h6 {
     margin: 0;
@@ -69,20 +76,17 @@ div#container {
     position: relative;
     min-height: 700px;
     border: 1px solid gray;
-    /*background: lightgrey;*/
-    background-image: url("/assets/Site/bg3.gif");
+    background: lightgrey;
     max-width: 1000px;
     min-width: 750px;
     margin: auto;
+    
 }
 div#first-column {
 	margin: 3px 3px 3px 3px;
     position: absolute;
     top: 0;
     bottom: 0;
-    /*border: 1px solid gray;*/
-    /*background: rgb(240, 240, 240);*/
-    background-image: url("/assets/Site/bg3.gif");
     width: 279px;
     margin: 3px;
 }
@@ -93,8 +97,6 @@ div#content {
 	left: 0;
     margin: 3px 3px 3px 5px;
     padding: 10px;
-    /*background: rgb(240, 240, 240);*/
-    background-image: url("/assets/Site/bg3.gif");
     border: 1px solid gray;
     min-height: 392px;
     width: 680px;
@@ -102,7 +104,7 @@ div#content {
 div#header,
 div#footer,
 div#menu {
-    background: rgb(20, 20, 20);
+    background:red;
     padding: 3px;
     border: 1px solid gray;
     max-width: 994px;
@@ -119,6 +121,7 @@ div#header {
     background-image: url("/assets/springicon.png") ;
     width: 800px;
     height: 220px;
+   
 }
 div#footer {
     border-top: none;
@@ -127,8 +130,11 @@ div#footer {
 div.box {
 	border: 1px solid gray;
 	margin: 0px 0px 30px 5px;
+	background:white;
 	padding: 5px;
-	height: 260px;
+	height: 305px;
+	
+	
 }
 
 div.searchbox {
@@ -138,6 +144,8 @@ div.searchbox {
 	height: 55px;
 }
 
+ 
+
 /* ------------------------- */
  #navbar ul          
  {
@@ -145,12 +153,13 @@ div.searchbox {
      padding: 5px;         
      list-style-type: none;         
      text-align: left;        
-     background-color: #333;         
+     background-color:red;
+     border-color:red;
  }  
  
  #navbar ul li           
  {
-     display: inline;
+     display:inline;
        
  }  
  
@@ -159,11 +168,11 @@ div.searchbox {
      text-decoration: none;         
      padding: .2em 1em;         
      color: #fff;         
-     background-color: #333;         
+     background-color:red;         
      }  
      
 #navbar ul li a:hover          
 {
     color: #000;         
-    background-color: #fff;         
+    background-color:yellow;         
 }

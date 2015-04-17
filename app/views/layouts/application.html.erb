@@ -1,7 +1,9 @@
 <!DOCTYPE html> <html> <head>   <title>Spring Pharmacy</title>  
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> 
-<%= csrf_meta_tags %> </head> <body>        
+<%= csrf_meta_tags %> </head> 
+<div id='bd'>
+<body>  
 <div id='header'>
   
   <!-- Header Image Displayes here -->  
@@ -12,9 +14,9 @@
         <li><a href="/items">Products</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact Us</a></li>
-        <li><a href="/admin">Login</a></li>
-        <li><a href="/logout">Logout</a></li>
-        <li><a href="/cart">View Cart(<%=@total_items%> items, $x</a></li>
+        <li><a href="/admin">AdminLogin</a></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete  %></li>
+        <li><a href="/cart">View Cart</a></li>
       </ul>      
   </div>     
   </div>     
@@ -22,30 +24,33 @@
   <div id='content'>          
   <p class="notice">
     <%= flash[:notice] %></p> 
-    <p class="notice"><%= notice %></p> 
-       
+    
        <p class="alert"><%= alert %></p>  
     <%= yield %>  
     
     <% if user_signed_in? %>  
     
-    <div>Signed in as... <%= current_user.email %> (<%= link_to 'Sign out', destroy_user_session_path, :method => :delete  %>)</div>
+    <div>
+      Signed in as... <%= current_user.email %> (<%= link_to 'Logout', destroy_user_session_path, :method => :delete  %>)
+    </div>
     
     <% else %>   
     
-    <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %> 
+   <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Login', new_user_session_path %> 
     
     <% end %>   
     
     
     </div>
     <div id='first-column'>             
-    <div class="loginbox">               
-    <h2 class="BoxHeaders">Login Here....</h2>  
-    </div>               
-    <div class="searchbox"> 
-    <h2 class="BoxHeaders">Search Catalog</h2>  
-    </div>             
+    <div class="searchbox">
+    		<h2 class="BoxHeaders">Search</h2>
+    		<input type="text" name="search" /><input type="submit" value="Search" />
+  	</div>               
+    <div class="box">
+        <h2 class="BoxHeaders1">Special Offers</h2>
+        <img src="/assets/fishoil.jpg" alt="Special Offers" >
+    </div>
     </div>         
     </div>         
     <div id='footer'>             
@@ -53,5 +58,6 @@
     Online Spring Store &trade; 2015</h6>       
     </div> 
     </body> 
+    </div>
     </html> 
   
