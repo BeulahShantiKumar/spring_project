@@ -2,4 +2,4 @@
 
 This is the application for spring pharmacy
 
-by Beulah Shanti Kumar 
+by Beulah Shanti Kumar , Jhansi Rani Adulla
