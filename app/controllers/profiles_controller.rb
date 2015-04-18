@@ -1,6 +1,19 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
+  
+  def myprofile      
+    profile = Profile.find_by_user_id(current_user.id)          
+    if profile.nil?      
+      redirect_to "/profiles/new"     
+      else      
+        @user = User.find(current_user.id)    
+        @profile = Profile.find_by_user_id(@user.id)       
+        redirect_to "/profiles/#{@profile.id}"    
+    end  
+  end 
+  
+  
   # GET /profiles
   # GET /profiles.json
   def index
@@ -13,9 +26,12 @@ class ProfilesController < ApplicationController
   end
 
   # GET /profiles/new
-  def new
-    @profile = Profile.new
-  end
+   def new  
+     @user = User.find(current_user.id) 
+     @profile = Profile.new      
+     @profile.user_id = @user.id      
+    # respond_with(@profile)   
+   end 
 
   # GET /profiles/1/edit
   def edit

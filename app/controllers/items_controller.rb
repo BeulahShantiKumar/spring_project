@@ -11,13 +11,6 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @item.show
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @item }
-    end
-    
   end
 
   # GET /items/new

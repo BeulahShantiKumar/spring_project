@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   get 'site/contact'
   
-  get 'payment/thankyou'
   
   get '/about' => 'site#about' 
   get '/contact' => 'site#contact' 
@@ -23,7 +22,9 @@ Rails.application.routes.draw do
    get '/cart/clear' => 'cart#clearCart'  
    get '/cart/:id' => 'cart#add'
    
-   get '/thankyou' => 'payment#thankyou' 
+   get  '/myprofile' => 'profiles#myprofile' 
+   
+   get '/thankyou' => 'site#thankyou' 
 
   resources :items
 
